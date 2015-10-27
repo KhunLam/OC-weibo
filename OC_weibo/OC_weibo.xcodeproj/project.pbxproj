@@ -14,6 +14,12 @@
 		25085E0D1BDE48620060A150 /* OC_weiboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25085E0C1BDE48620060A150 /* OC_weiboTests.m */; };
 		25085E181BDE48620060A150 /* OC_weiboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 25085E171BDE48620060A150 /* OC_weiboUITests.m */; };
 		25085E471BDE4F140060A150 /* LKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25085E461BDE4F140060A150 /* LKTabBarViewController.m */; };
+		25F672FA1BDE94AE0064ECAD /* LKBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F672F91BDE94AE0064ECAD /* LKBaseTableViewController.m */; };
+		25F672FD1BDE94C20064ECAD /* LKHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F672FC1BDE94C20064ECAD /* LKHomeViewController.m */; };
+		25F673001BDE94D10064ECAD /* LKMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F672FF1BDE94D10064ECAD /* LKMessageViewController.m */; };
+		25F673031BDE94E00064ECAD /* LKDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F673021BDE94E00064ECAD /* LKDiscoverViewController.m */; };
+		25F673061BDE94F00064ECAD /* LKProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F673051BDE94F00064ECAD /* LKProfileViewController.m */; };
+		25F673091BDE9E2C0064ECAD /* LKVistorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25F673081BDE9E2C0064ECAD /* LKVistorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,18 @@
 		25085E191BDE48620060A150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		25085E451BDE4F140060A150 /* LKTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKTabBarViewController.h; sourceTree = "<group>"; };
 		25085E461BDE4F140060A150 /* LKTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKTabBarViewController.m; sourceTree = "<group>"; };
+		25F672F81BDE94AE0064ECAD /* LKBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKBaseTableViewController.h; sourceTree = "<group>"; };
+		25F672F91BDE94AE0064ECAD /* LKBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKBaseTableViewController.m; sourceTree = "<group>"; };
+		25F672FB1BDE94C20064ECAD /* LKHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKHomeViewController.h; sourceTree = "<group>"; };
+		25F672FC1BDE94C20064ECAD /* LKHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKHomeViewController.m; sourceTree = "<group>"; };
+		25F672FE1BDE94D10064ECAD /* LKMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKMessageViewController.h; sourceTree = "<group>"; };
+		25F672FF1BDE94D10064ECAD /* LKMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKMessageViewController.m; sourceTree = "<group>"; };
+		25F673011BDE94E00064ECAD /* LKDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDiscoverViewController.h; sourceTree = "<group>"; };
+		25F673021BDE94E00064ECAD /* LKDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDiscoverViewController.m; sourceTree = "<group>"; };
+		25F673041BDE94F00064ECAD /* LKProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKProfileViewController.h; sourceTree = "<group>"; };
+		25F673051BDE94F00064ECAD /* LKProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKProfileViewController.m; sourceTree = "<group>"; };
+		25F673071BDE9E2C0064ECAD /* LKVistorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKVistorView.h; sourceTree = "<group>"; };
+		25F673081BDE9E2C0064ECAD /* LKVistorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKVistorView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +218,8 @@
 		25085E2B1BDE48870060A150 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				25F673011BDE94E00064ECAD /* LKDiscoverViewController.h */,
+				25F673021BDE94E00064ECAD /* LKDiscoverViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -232,6 +252,8 @@
 		25085E2F1BDE48870060A150 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				25F672FB1BDE94C20064ECAD /* LKHomeViewController.h */,
+				25F672FC1BDE94C20064ECAD /* LKHomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -266,6 +288,8 @@
 			children = (
 				25085E451BDE4F140060A150 /* LKTabBarViewController.h */,
 				25085E461BDE4F140060A150 /* LKTabBarViewController.m */,
+				25F672F81BDE94AE0064ECAD /* LKBaseTableViewController.h */,
+				25F672F91BDE94AE0064ECAD /* LKBaseTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -280,6 +304,8 @@
 		25085E351BDE48870060A150 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				25F673071BDE9E2C0064ECAD /* LKVistorView.h */,
+				25F673081BDE9E2C0064ECAD /* LKVistorView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +324,8 @@
 		25085E371BDE48870060A150 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				25F672FE1BDE94D10064ECAD /* LKMessageViewController.h */,
+				25F672FF1BDE94D10064ECAD /* LKMessageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -330,6 +358,8 @@
 		25085E3B1BDE48870060A150 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				25F673041BDE94F00064ECAD /* LKProfileViewController.h */,
+				25F673051BDE94F00064ECAD /* LKProfileViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -522,7 +552,13 @@
 			files = (
 				25085DFD1BDE48620060A150 /* OC_weibo.xcdatamodeld in Sources */,
 				25085E471BDE4F140060A150 /* LKTabBarViewController.m in Sources */,
+				25F673091BDE9E2C0064ECAD /* LKVistorView.m in Sources */,
+				25F673031BDE94E00064ECAD /* LKDiscoverViewController.m in Sources */,
+				25F672FA1BDE94AE0064ECAD /* LKBaseTableViewController.m in Sources */,
 				25085DF41BDE48620060A150 /* AppDelegate.m in Sources */,
+				25F672FD1BDE94C20064ECAD /* LKHomeViewController.m in Sources */,
+				25F673061BDE94F00064ECAD /* LKProfileViewController.m in Sources */,
+				25F673001BDE94D10064ECAD /* LKMessageViewController.m in Sources */,
 				25085DF11BDE48620060A150 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -732,6 +768,7 @@
 				25085E1E1BDE48620060A150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		25085E1F1BDE48620060A150 /* Build configuration list for PBXNativeTarget "OC_weiboTests" */ = {
 			isa = XCConfigurationList;
@@ -740,6 +777,7 @@
 				25085E211BDE48620060A150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		25085E221BDE48620060A150 /* Build configuration list for PBXNativeTarget "OC_weiboUITests" */ = {
 			isa = XCConfigurationList;
@@ -748,6 +786,7 @@
 				25085E241BDE48620060A150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -20,16 +20,9 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    
-    UIViewController *VC = [[UIViewController alloc]init];
-    VC.view.backgroundColor = [UIColor redColor];
-    
-    UINavigationController * nav = [[UINavigationController alloc]initWithRootViewController:VC];
-    
     LKTabBarViewController *tabBar = [[LKTabBarViewController alloc]init];
-    [tabBar addChildViewController:nav];
-    
     self.window.rootViewController = tabBar;
+    
     [self.window makeKeyAndVisible];
     
     return YES;
