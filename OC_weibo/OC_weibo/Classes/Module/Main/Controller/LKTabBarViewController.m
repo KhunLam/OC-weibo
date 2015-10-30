@@ -28,10 +28,10 @@
     // 消息
     LKMessageViewController *messageVC = [[LKMessageViewController alloc]init];
     [self addChildViewController:messageVC andTitle:@"消息" andImageName:@"tabbar_message_center"];
-    // 添加撰写控制器
+    // 添加撰写控制器（占位）
     UIViewController *VC = [[UIViewController alloc]init];
     [self addChildViewController:VC andTitle:@"" andImageName:@""];
-// 发现
+    // 发现
     LKDiscoverViewController *discoverVC = [[LKDiscoverViewController alloc]init];
     [self addChildViewController:discoverVC andTitle:@"发现" andImageName:@"tabbar_discover"];
     // 我

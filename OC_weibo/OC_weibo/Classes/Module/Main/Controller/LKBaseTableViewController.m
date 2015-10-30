@@ -7,25 +7,80 @@
 //
 
 #import "LKBaseTableViewController.h"
+#import "LKHomeViewController.h"
+#import "LKMessageViewController.h"
+#import "LKDiscoverViewController.h"
+#import "LKProfileViewController.h"
 
-@interface LKBaseTableViewController ()
+@interface LKBaseTableViewController ()<LKVistorViewDalegate>
 
 @property (nonatomic,assign) BOOL userLogin;
+
+@property (nonatomic,strong)LKVistorView *vistorView;
 
 @end
 
 @implementation LKBaseTableViewController
 
 
-
+/**
+ *  判断进入 那个界面
+ */
 -(void)loadView{
     self.userLogin = NO;
-    self.userLogin ? [super loadView] :[self setupVisitorView];
+    self.userLogin ? [super loadView] :[self setVisitorView];
 }
 
--(void)setupVisitorView{
-    self.view = [[LKVistorView alloc]init];
-    self.view.backgroundColor = [UIColor whiteColor];
+-(void)setVisitorView{
+   LKVistorView * vistorView =[[LKVistorView alloc]init];
+    self.view = vistorView;
+    self.vistorView = vistorView;
+    // 设置代理
+    vistorView.vistorViewDelegate = self;
+    
+    // 设置导航栏
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"注册" style:UIBarButtonItemStylePlain target:self action:@selector(vistorViewRegistClick)];
+     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"登录" style:UIBarButtonItemStylePlain target:self action:@selector(vistorViewLoginClick)];
+
+    /**
+     *  判断是那个界面  使用的图片个文字
+     */
+    if ([self isKindOfClass:[LKHomeViewController class]]) {
+        [vistorView startRotationAnimation];
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center addObserver:self selector:@selector(didEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
+        [center addObserver:self selector:@selector(didBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
+    }else if ([self isKindOfClass:[LKMessageViewController class]]){
+        [vistorView setupVistorViewWithImageName:@"visitordiscover_image_message" andMessage:@"登录后，别人评论你的微博，发给你的消息，都会在这里收到通知"];
+    }else if ([self isKindOfClass:[LKDiscoverViewController class]]){
+        [vistorView setupVistorViewWithImageName:@"visitordiscover_image_message" andMessage:@"登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过"];
+    }else if ([self isKindOfClass:[LKProfileViewController class]]){
+        [vistorView setupVistorViewWithImageName:@"visitordiscover_image_profile" andMessage:@"登录后，你的微博、相册、个人资料会显示在这里，展示给别人"];
+    }
+}
+
+#pragma mark -通知方法
+// 暂停动画
+-(void)didEnterBackground{
+    [self.vistorView pauseAnimation];
+}
+// 继续动画
+-(void)didBecomeActive{
+    [self.vistorView resumeAnimation];
+}
+
+#pragma mark - 代理方法
+/**
+ *  点击注册按钮
+ */
+-(void)vistorViewRegistClick{
+    NSLog(@"vistorViewRegistClick");
+}
+/**
+ *  点击登录按钮
+ */
+-(void)vistorViewLoginClick{
+    NSLog(@"vistorViewLoginClick");
 }
 
 
@@ -56,58 +111,5 @@
     return 0;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

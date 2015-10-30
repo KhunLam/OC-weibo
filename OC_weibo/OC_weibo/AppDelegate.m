@@ -18,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [self setupAppearance];
+    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     LKTabBarViewController *tabBar = [[LKTabBarViewController alloc]init];
@@ -28,7 +30,10 @@
     return YES;
 }
 
-
+-(void)setupAppearance{
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
+    navigationBar.tintColor = [UIColor orangeColor];
+}
 
 
 
